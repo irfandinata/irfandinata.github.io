@@ -1,0 +1,492 @@
+/* ===================================================
+   INDEX.CSS
+   CSS untuk halaman index.html (Beranda).
+   Urutan mengikuti HTML: header (hero) -> main -> footer.
+   =================================================== */
+
+/* ---------- 1. Dasar halaman ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2e7d32;   /* Hijau Lingkungan */
+    --secondary-color: #fbc02d; /* Kuning Energi/Matahari */
+    --dark-color: #1b5e20;
+    --text-color: #333333;
+    --bg-light: #f4f9f4;
+    --white: #ffffff;
+    --font-family:  'Segoe UI', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Pembungkus isi agar lebarnya sama & berada di tengah */
+.container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ---------- 2. <header class="hero"> (foto penuh) ---------- */
+.hero {
+    background: linear-gradient(rgba(12, 40, 16, 0.65), rgba(12, 40, 16, 0.65)),
+                url("../Gambar/photo index.avif") center 40% / cover no-repeat;
+    color: var(--white);
+    padding-bottom: 150px;
+}
+
+/* <nav class="navbar"> di dalam hero */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem;
+}
+
+.logo {
+    display: flex;          /* foto logo & tulisan berdampingan */
+    align-items: center;    /* sejajar di tengah secara vertikal */
+    gap: 0.6rem;            /* jarak antara foto & tulisan */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--white);
+    text-decoration: none;
+}
+
+/* Foto logo di navbar */
+.logo img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;        /* logo utuh, tidak terpotong */
+    background: var(--white);   /* latar logo putih, jadi dibuat lingkaran putih */
+    border-radius: 50%;
+    padding: 4px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 0.25rem;
+}
+
+.nav-links a {
+    display: inline-block;
+    padding: 0.6rem 1.1rem;
+    border-radius: 999px;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Menu "Beranda" yang sedang dibuka: pil putih */
+.nav-links a.active {
+    background: var(--white);
+    color: var(--dark-color);
+}
+
+/* <div class="hero-content"> = badge, judul, paragraf, tombol */
+.hero-content {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 6rem 1.5rem 0;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.4rem;
+}
+
+.hero h1 {
+    font-size: 3.75rem;
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    max-width: 700px;
+    margin-bottom: 1.4rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #e4f0e4;
+    max-width: 560px;
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+/* Tombol kuning */
+.btn-cta {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: #1a1a1a;
+    padding: 0.95rem 1.6rem;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-cta:hover {
+    background-color: #f9a825;
+    transform: translateY(-2px);
+}
+
+/* Tombol garis putih */
+.btn-outline {
+    display: inline-block;
+    padding: 0.85rem 1.5rem;
+    border: 2px solid var(--white);
+    border-radius: 999px;
+    color: var(--white);
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-outline:hover {
+    background: var(--white);
+    color: var(--dark-color);
+}
+
+/* ---------- 3. <main> ---------- */
+main {
+    flex: 1;
+    width: 100%;
+}
+
+/* ---------- 3a. Kotak statistik: <div class="stats"> ---------- */
+.stats {
+    position: relative;   /* supaya tampil di atas foto hero */
+    margin-top: -90px;    /* naik menimpa bagian bawah hero */
+    background: var(--white);
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(20, 53, 26, 0.14);
+    padding: 2rem 2.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.75rem;
+}
+
+.stat-item {
+    flex: 1 1 240px;
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+}
+
+.stat-angka {
+    min-width: 5.5rem; /* supaya teks di sampingnya sejajar */
+    flex-shrink: 0;      /* angka tidak ikut mengecil */
+    white-space: nowrap; /* "5–10%" tetap satu baris */
+    font-size: 2.9rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--primary-color);
+}
+
+.stat-item p {
+    font-size: 0.95rem;
+    color: #4a5a4a;
+}
+
+/* ---------- 3b. Judul section: <div class="section-head"> ---------- */
+.section-head {
+    max-width: 760px;
+}
+
+/* Garis kuning pendek di atas judul */
+.garis-aksen {
+    display: block;
+    width: 56px;
+    height: 5px;
+    border-radius: 3px;
+    background: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.section-head h2 {
+    font-size: 2.4rem;
+    line-height: 1.2;
+    font-weight: 800;
+    color: #14351a;
+    margin-bottom: 0.9rem;
+}
+
+.section-head p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #4a5a4a;
+}
+
+/* ---------- 3c. Alasan: <section class="alasan"> ---------- */
+.alasan {
+    padding-top: 6rem;
+    padding-bottom: 2.5rem;
+}
+
+.alasan .section-head {
+    margin-bottom: 3.5rem;
+}
+
+/* Satu baris: foto + teks */
+.alasan-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 3.5rem;
+}
+
+/* Baris kedua: foto di kanan */
+.alasan-item.terbalik {
+    flex-direction: row-reverse;
+}
+
+.alasan-item img {
+    flex: 1 1 380px;
+    min-width: 0;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
+.alasan-teks {
+    flex: 1 1 380px;
+}
+
+.alasan-nomor {
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: var(--primary-color);
+}
+
+.alasan-teks h3 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #14351a;
+    margin: 0.5rem 0 0.75rem;
+}
+
+.alasan-teks p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #4a5a4a;
+    margin-bottom: 0.9rem;
+
+}
+
+.link-panah {
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.link-panah:hover {
+    color: var(--dark-color);
+    text-decoration: underline;
+}
+
+/* ---------- 3d. 4 Langkah: <section class="langkah"> ---------- */
+.langkah {
+    background: var(--bg-light);
+    padding: 5.5rem 0;
+    margin-top: 1rem;
+}
+
+.langkah-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.langkah-head .section-head h2 {
+    font-size: 2.1rem;
+}
+
+/* Tombol garis hijau */
+.btn-outline-hijau {
+    display: inline-block;
+    padding: 0.75rem 1.4rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 999px;
+    color: var(--primary-color);
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-outline-hijau:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.langkah-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+}
+
+.langkah-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(27, 94, 32, 0.08);
+    transition: transform 0.3s;
+}
+
+.langkah-card:hover {
+    transform: translateY(-5px);
+}
+
+.langkah-foto {
+    position: relative; /* patokan posisi lingkaran nomor */
+}
+
+.langkah-foto img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+}
+
+/* Lingkaran kuning berisi nomor */
+.langkah-nomor {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    color: #1a1a1a;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.langkah-body {
+    padding: 1.25rem 1.4rem 1.5rem;
+}
+
+.langkah-body h3 {
+    font-size: 1.1rem;
+    line-height: 1.35;
+    color: var(--dark-color);
+    margin-bottom: 0.4rem;
+}
+
+.langkah-body p {
+    font-size: 0.92rem;
+    color: #4a5a4a;
+}
+
+/* ---------- 4. <footer> ---------- */
+footer {
+    background-color: var(--dark-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+}
+
+/* ===================================================
+   RESPONSIVE
+   =================================================== */
+
+/* Tablet (lebar <= 768px) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        padding-bottom: 120px;
+    }
+
+    .hero-content {
+        padding-top: 3rem;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .section-head h2,
+    .langkah-head .section-head h2 {
+        font-size: 1.8rem;
+    }
+
+    .alasan {
+        padding-top: 4rem;
+    }
+
+    .alasan-item {
+        gap: 1.5rem;
+    }
+
+    .alasan-item img {
+        height: 220px;
+    }
+}
+
+/* Smartphone (lebar <= 480px) */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.9rem;
+    }
+
+    .stats {
+        padding: 1.5rem;
+    }
+
+    .stat-angka {
+        font-size: 2.3rem;
+    }
+}
