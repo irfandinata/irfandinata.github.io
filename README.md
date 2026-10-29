@@ -12,7 +12,7 @@ Proyek UTS Mata Kuliah Pemrograman Web — Responsive Educational Website.
 | No | Nama | NIM | Tugas |
 |----|------|-----|-------|
 | 1 | Gede Irfandinata Kusuma | 2515091020 | index HTML & index CSS |
-| 2 | [Nama Anggota] | [NIM] | CSS Styling & Responsivitas |
+| 2 | I Gede Dibya Adinatha Mahasanti|2515091071| CSS Styling & Responsivitas |
 | 3 | [Nama Anggota] | [NIM] | Penyusunan Konten Edukasi |
 | 4 | [Nama Anggota] | [NIM] | [Tugas] |
 
