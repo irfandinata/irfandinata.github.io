@@ -299,8 +299,6 @@ UTS/
 - United Nations. [SDG 7: Affordable and Clean Energy](https://sdgs.un.org/goals/goal7) dan [SDG 13: Climate Action](https://sdgs.un.org/goals/goal13).
 
 ### Atribusi Foto
-Semua foto berasal dari [Unsplash](https://unsplash.com) dan bebas digunakan di bawah [Unsplash License](https://unsplash.com/license).
-
 | Halaman | Foto |
 |---|---|
 | Beranda | [rumah kayu (hero & navbar)](https://images.unsplash.com/photo-1774597998353-2b8be5199a01), [panel surya](https://images.unsplash.com/photo-1624397640148-949b1732bb0a), [lampu](https://images.unsplash.com/photo-1532007271951-c487760934ae), [bangunan hijau](https://images.unsplash.com/photo-1556983852-43bf21186b2a) |
